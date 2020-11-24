@@ -1,27 +1,6 @@
 <template>
   <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">vehicle-app</h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+    <div>test</div>
   </div>
 </template>
 
@@ -31,6 +10,8 @@ export default {}
 
 <style>
 .container {
+  font-family: 'Codec Pro News';
+  font-style: normal;
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
@@ -40,10 +21,12 @@ export default {}
 }
 
 .title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
+  font-family: 'Codec Pro News';
   font-weight: 300;
+  font-style: normal;
+
+  display: block;
+
   font-size: 100px;
   color: #35495e;
   letter-spacing: 1px;
