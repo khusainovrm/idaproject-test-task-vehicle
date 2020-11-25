@@ -9,6 +9,7 @@ const rejectByChance = () => {
 export const getVehicles = () =>
   new Promise((resolve, reject) => {
     if (rejectByChance()) {
+      // eslint-disable-next-line prefer-promise-reject-errors
       return reject({
         error: 'Server error',
       })

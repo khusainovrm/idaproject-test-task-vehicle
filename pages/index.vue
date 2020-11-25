@@ -7,6 +7,26 @@
   </div>
 </template>
 
+<script>
+import { getVehicles } from '@/api/request'
+export default {
+  data: () => ({
+    error: false,
+  }),
+  async created() {
+    try {
+      // eslint-disable-next-line no-console
+      console.log(await getVehicles())
+      this.erro = false
+    } catch (e) {
+      if (e.error === 'Server error') {
+        this.error = true
+      }
+    }
+  },
+}
+</script>
+
 <style>
 .container {
   font-family: 'Codec Pro News', serif;

@@ -3,7 +3,7 @@
     <div class="Error__title">An error has occurred</div>
     <div class="Error__text">Please refresh the page</div>
     <div class="Error__button">
-      <div class="Error__button-text">Reload page</div>
+      <div class="Error__button-text" @click="reloadAndFetch">Reload page</div>
     </div>
   </div>
 </template>
@@ -11,6 +11,11 @@
 <script>
 export default {
   name: 'Error',
+  methods: {
+    reloadAndFetch() {
+      this.$store.dispatch('vehicles/fetch_vehicles')
+    },
+  },
 }
 </script>
 
@@ -28,6 +33,7 @@ export default {
 }
 
 .Error .Error__text {
+  margin-top: 24px;
   font-weight: 300;
   font-size: 14px;
   line-height: 20px;
@@ -43,13 +49,13 @@ export default {
   height: 48px;
   background: var(--main-400);
   border-radius: 12px;
-  transition: background 0.2s ease-out;
+  transition: background 0.1s ease-out;
 }
 
 .Error .Error__button:hover {
   cursor: pointer;
   background: var(--main-500);
-  transition: background 0.3s ease-in;
+  transition: background 0.2s ease-in;
 }
 
 .Error__button .Error__button-text {
