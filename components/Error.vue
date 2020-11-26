@@ -2,18 +2,26 @@
   <div class="Error">
     <div class="Error__title">An error has occurred</div>
     <div class="Error__text">Please refresh the page</div>
-    <div class="Error__button">
-      <div class="Error__button-text" @click="reloadAndFetch">Reload page</div>
-    </div>
+    <button class="Error__button" :disabled="loading" @click="reloadAndFetch">
+      <span class="Error__button-text">
+        <span v-if="!loading">Reload page</span>
+        <span v-else>Loading</span>
+      </span>
+    </button>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Error',
+  data: () => ({
+    loading: false,
+  }),
   methods: {
-    reloadAndFetch() {
-      this.$store.dispatch('vehicles/fetch_vehicles')
+    async reloadAndFetch() {
+      this.loading = true
+      await this.$store.dispatch('vehicles/fetch_vehicles')
+      this.loading = false
     },
   },
 }
@@ -29,7 +37,6 @@ export default {
   font-size: 40px;
   line-height: 48px;
   margin-top: 24px;
-  color: var(--base-500);
 }
 
 .Error .Error__text {
@@ -63,5 +70,12 @@ export default {
   font-weight: bold;
   font-size: 16px;
   color: var(--base-0);
+}
+
+.Error button[disabled],
+.Error button[disabled]:hover {
+  border: none;
+  background-color: #cccccc;
+  color: #666666;
 }
 </style>

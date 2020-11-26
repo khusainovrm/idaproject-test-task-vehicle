@@ -1,14 +1,22 @@
 <template>
   <div class="Content">
-    <Error />
+    <Loader v-if="loading" />
+    <Error v-else-if="!error" />
+    <div v-else class="Content__container"><SelectHeader /> <Vehicles /></div>
   </div>
 </template>
 
 <script>
-import Error from '@/components/Error'
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'Content',
-  components: { Error },
+  computed: {
+    ...mapGetters('vehicles', {
+      error: 'getError',
+      loading: 'getLoading',
+    }),
+  },
 }
 </script>
 
@@ -22,6 +30,14 @@ export default {
 
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.Content .Content__container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 </style>

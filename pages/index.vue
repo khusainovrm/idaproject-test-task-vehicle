@@ -8,21 +8,12 @@
 </template>
 
 <script>
-import { getVehicles } from '@/api/request'
 export default {
   data: () => ({
     error: false,
   }),
-  async created() {
-    try {
-      // eslint-disable-next-line no-console
-      console.log(await getVehicles())
-      this.erro = false
-    } catch (e) {
-      if (e.error === 'Server error') {
-        this.error = true
-      }
-    }
+  created() {
+    this.$store.dispatch('vehicles/fetch_vehicles')
   },
 }
 </script>
@@ -31,6 +22,7 @@ export default {
 .container {
   font-family: 'Codec Pro News', serif;
   font-style: normal;
+  color: var(--base-500);
   min-height: 100vh;
   width: 100%;
   background: var(--base-0);
