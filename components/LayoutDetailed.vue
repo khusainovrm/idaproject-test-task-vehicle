@@ -56,17 +56,21 @@ export default {
 .DetailedPage_wrapper {
   display: flex;
   height: 100%;
+  padding: 0 64px;
 }
 
 .DetailedPage_wrapper__Image,
 .DetailedPage_wrapper-content {
   width: 50%;
-  padding: 64px;
+}
+
+.DetailedPage_wrapper-content {
+  padding-left: 64px;
 }
 
 img {
   width: 100%;
-  max-width: 712px;
+  max-width: 711px;
   border-radius: 24px;
 }
 

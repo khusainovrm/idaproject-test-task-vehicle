@@ -1,7 +1,7 @@
 <template>
   <div class="Specification">
     <div class="Specification__description">
-      {{ vehicle.description }}
+      {{ vehicle.specifications_text }}
     </div>
     <div class="Specification__features">
       <div class="title">Features:</div>

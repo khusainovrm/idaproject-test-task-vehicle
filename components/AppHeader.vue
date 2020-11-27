@@ -1,6 +1,6 @@
 <template>
   <header>
-    <div class="Logo">
+    <div class="Logo" @click="$router.push('/')">
       <img class="Logo__icon" src="~/assets/svgs/Logo.svg" alt="#" />
       <img class="Logo__text" src="~/assets/svgs/Pepelane.svg" alt="#" />
     </div>
@@ -57,6 +57,7 @@ header {
   display: flex;
   align-items: center;
   margin-right: 65px;
+  cursor: pointer;
 }
 
 .Logo .Logo__icon {
