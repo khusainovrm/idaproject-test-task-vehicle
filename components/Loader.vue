@@ -11,7 +11,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .lds-ripple {
   display: inline-block;
   position: relative;

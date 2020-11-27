@@ -1,5 +1,5 @@
 <template>
-  <div class="Vehicles">
+  <div class="Vehicles responsive">
     <div v-for="vehicle in vehicles" :key="vehicle.id" class="Vehicles__card">
       <VehicleCard :vehicle="vehicle" />
     </div>
@@ -16,15 +16,12 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .Vehicles {
   flex-grow: 1;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 32px;
-}
-
-.Vehicles__card {
 }
 </style>

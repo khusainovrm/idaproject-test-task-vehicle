@@ -1,6 +1,6 @@
 <template>
   <div
-    class="Card"
+    class="Card responsive"
     @click="$router.push(`vehicles/${vehicle.name}/specifications`)"
   >
     <div class="Card__Image">
@@ -26,7 +26,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .Card {
   background: var(--base-0);
   border-radius: 32px;

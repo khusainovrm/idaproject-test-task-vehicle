@@ -1,12 +1,12 @@
 <template>
-  <div class="Select">
-    <div class="Select__select">
+  <div class="Select responsive">
+    <div class="Select__select responsive">
       <span class="Select__select-text">Rent</span>
       <span class="Select__select-select">whatever</span>
     </div>
     <div class="Select_create">
-      <span class="Select_create--text center">Add new</span>
-      <button class="Button">
+      <span class="Select_create--text center responsive">Add new</span>
+      <button class="Button responsive">
         <span class="Button__text">+</span>
       </button>
     </div>
@@ -19,7 +19,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .Select {
   display: inline-flex;
   width: 100%;
@@ -54,7 +54,7 @@ export default {
   width: 48px;
   height: 48px;
   background: var(--main-400);
-  border-radius: 16px;
+  border-radius: 30%;
   transition: background 0.1s ease-out;
 }
 

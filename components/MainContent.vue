@@ -1,5 +1,5 @@
 <template>
-  <div class="Content">
+  <div class="Content responsive">
     <Loader v-if="loading" />
     <Error v-else-if="!error" />
     <div v-else class="Content__container"><SelectHeader /> <Vehicles /></div>
@@ -20,7 +20,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .Content {
   background: var(--base-50);
   border-radius: 48px;

@@ -52,7 +52,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .DetailedPage_wrapper {
   display: flex;
   height: 100%;
@@ -68,7 +68,7 @@ export default {
   padding-left: 64px;
 }
 
-img {
+.DetailedPage_wrapper__Image img {
   width: 100%;
   max-width: 711px;
   border-radius: 24px;
@@ -85,14 +85,14 @@ img {
   margin: 32px 0;
 }
 
-a {
+.tabs a {
   font-weight: bold;
   font-size: 16px;
   color: var(--base-300);
   text-decoration: none;
 }
 
-a:nth-child(2) {
+.tabs a:nth-child(2) {
   margin: 0 32px;
 }
 

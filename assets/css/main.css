@@ -39,7 +39,9 @@ button::-moz-focus-inner {
   padding: 0;
 }
 
-button:hover, button:active, button:focus{
+button:hover,
+button:active,
+button:focus {
   outline: none;
   box-shadow: none;
 }
@@ -52,4 +54,90 @@ button:hover, button:active, button:focus{
 
 .select-none {
   user-select: none;
+}
+
+/*
+@media (min-width: 640px) { ... }
+@media (min-width: 768px) { ... }
+@media (min-width: 1024px) { ... }
+
+@media (min-width: 1536px) { ... } */
+
+@media (max-width: 1280px) {
+  .Vehicles.responsive {
+    flex-grow: 1;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 32px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .Vehicles.responsive {
+    flex-grow: 1;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 12px;
+  }
+
+  .Logo.responsive {
+    margin: 0;
+  }
+
+  .mobile-hidden {
+    display: none;
+  }
+
+  header.responsive {
+    margin: 0;
+    padding: 14px 16px 12px;
+  }
+
+  .App_wrapper.responsive {
+    margin: 8px 0 20px;
+  }
+
+  .Logo .Logo__icon.responsive,
+  .notification-icons {
+    margin: 0;
+    width: 32px;
+  }
+
+  .profile .profile__image.responsive {
+    height: 32px;
+  }
+
+  .Logo .Logo__text.resposive {
+    width: 70px;
+  }
+
+  .Content.responsive {
+    padding: 26px 16px;
+    border-radius: 24px;
+  }
+
+  .Select .Select__select.responsive {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .Select_create--text.responsive {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .Select .Button.responsive {
+    height: 32px;
+    width: 32px;
+  }
+
+  .Select.responsive {
+    margin-bottom: 25px;
+  }
+
+  .Card.responsive {
+    border-radius: 24px;
+  }
 }

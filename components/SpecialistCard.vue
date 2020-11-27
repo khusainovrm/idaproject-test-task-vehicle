@@ -20,17 +20,17 @@ export default {
 }
 </script>
 
-<style scoped>
-img {
+<style>
+.Team_specialists__specialists-imamge img {
   border-radius: 16px;
   margin-bottom: 16px;
 }
 
-.name {
+.Team_specialists__specialists-description .name {
   font-weight: bold;
+  font-size: 16px;
   line-height: 14px;
   color: var(--base-500);
-  margin-bottom: 8px;
 }
 
 .profession {

@@ -2,7 +2,7 @@
   <div class="container">
     <div class="App">
       <AppHeader />
-      <div class="App_wrapper">
+      <div class="App_wrapper responsive">
         <div v-if="!isRouteIncludesVehicle" class="App_wrapper-main">
           <Nuxt />
         </div>

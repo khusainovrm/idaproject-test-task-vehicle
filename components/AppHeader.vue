@@ -1,41 +1,46 @@
 <template>
-  <header>
-    <div class="Logo" @click="$router.push('/')">
-      <img class="Logo__icon" src="~/assets/svgs/Logo.svg" alt="#" />
-      <img class="Logo__text" src="~/assets/svgs/Pepelane.svg" alt="#" />
-    </div>
-
-    <p class="Logo__motto">World's first affordable airsharing</p>
-
-    <div class="theme-toggle">
+  <header class="AppHeader responsive">
+    <div class="Logo responsive" @click="$router.push('/')">
+      <img class="Logo__icon responsive" src="~/assets/svgs/Logo.svg" alt="#" />
       <img
-        class="theme-toggle__icon"
-        src="~/assets/svgs/moon-icon.svg"
-        alt="#"
-      />
-      <p class="theme-toggle__text">Night mood</p>
-    </div>
-
-    <div class="notification-icons">
-      <img
-        class="notification-icon-chat"
-        src="~/assets/svgs/chat-icon.svg"
-        alt="#"
-      />
-      <img
-        class="notification-icon"
-        src="~/assets/svgs/bell-icon.svg"
+        class="Logo__text resposive"
+        src="~/assets/svgs/Pepelane.svg"
         alt="#"
       />
     </div>
 
-    <div class="profile">
-      <p class="profile__text">Bessie Cooper</p>
-      <img
-        class="profile__image"
-        src="~/assets/images/profile-image.png"
-        alt="#"
-      />
+    <p class="Logo__motto mobile-hidden">World's first affordable airsharing</p>
+    <div class="buttons-wrapper">
+      <div class="theme-toggle">
+        <img
+          class="theme-toggle__icon responsive"
+          src="~/assets/svgs/moon-icon.svg"
+          alt="#"
+        />
+        <div class="theme-toggle__text mobile-hidden">Night mood</div>
+      </div>
+
+      <div class="notification-icons responsive">
+        <img
+          class="notification-icon-chat responsive"
+          src="~/assets/svgs/chat-icon.svg"
+          alt="#"
+        />
+        <img
+          class="notification-icon"
+          src="~/assets/svgs/bell-icon.svg"
+          alt="#"
+        />
+      </div>
+
+      <div class="profile">
+        <p class="profile__text mobile-hidden">Bessie Cooper</p>
+        <img
+          class="profile__image responsive"
+          src="~/assets/images/profile-image.png"
+          alt="#"
+        />
+      </div>
     </div>
   </header>
 </template>
@@ -44,7 +49,7 @@
 export default {}
 </script>
 
-<style scoped>
+<style>
 header {
   margin: 0 64px 40px;
   padding-top: 64px;
@@ -84,6 +89,10 @@ header {
   margin-right: 18px;
 }
 
+.theme-toggle__text {
+  margin-right: 107px;
+}
+
 .notification-icons .notification-icon-chat {
   margin-right: 29px;
 }
@@ -100,5 +109,15 @@ header {
 
 .profile .profile__image {
   border-radius: 50%;
+  height: 56px;
+}
+
+.notification-icons {
+  display: flex;
+  margin-right: 59px;
+}
+
+.AppHeader .buttons-wrapper {
+  display: flex;
 }
 </style>
