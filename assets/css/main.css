@@ -136,8 +136,68 @@ button:focus {
   .Select.responsive {
     margin-bottom: 25px;
   }
-
-  .Card.responsive {
+  px .Card.responsive {
     border-radius: 24px;
+  }
+
+  .DetailedPage_wrapper.responsive {
+    flex-direction: column;
+  }
+
+  .DetailedPage_wrapper__Image.responsive,
+  .DetailedPage_wrapper-content.responsive {
+    width: 100%;
+  }
+
+  .DetailedPage_wrapper__Image img.responsive {
+    max-width: none;
+  }
+
+  .DetailedPage_wrapper__Image.responsive {
+    margin-bottom: 22px;
+  }
+  .DetailedPage_wrapper__Image.responsive,
+  .DetailedPage_wrapper-content.responsive {
+    padding: 0 16px;
+  }
+
+  .DetailedPage_wrapper-content .name.responsive {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .tabs.responsive,
+  .Team_specialists__title.responsive {
+    margin: 20px 0;
+  }
+
+  .Team_specialists__specialists.responsive {
+    margin-bottom: 20px;
+    flex-direction: column;
+  }
+
+  .rent.responsive {
+    margin-top: 20px;
+    padding: 0 24px;
+  }
+
+  .rent .rent-text.responsive {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .Team_specialists_Card {
+    display: flex;
+  }
+
+  .Team_specialists__specialists-description {
+    margin-left: 20px;
+    padding-top: 8%;
+  }
+
+  .Rent__button .Rent__button-text.responsive {
+    font-size: 14px;
+    line-height: 12px;
+    padding: 16px 24px;
   }
 }

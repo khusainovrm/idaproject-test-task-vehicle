@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="Team_specialists_Card">
     <div class="Team_specialists__specialists-imamge">
       <img :src="src" alt="" />
     </div>

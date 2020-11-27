@@ -1,25 +1,25 @@
 <template>
-  <div class="DetailedPage_wrapper">
-    <div class="DetailedPage_wrapper__Image">
-      <img :src="vehicle.image" alt="" />
+  <div class="DetailedPage_wrapper responsive">
+    <div class="DetailedPage_wrapper__Image responsive">
+      <img :src="vehicle.image" alt="" class="responsive" />
     </div>
 
-    <div class="DetailedPage_wrapper-content">
-      <div class="name">{{ vehicle.name }}</div>
-      <div class="tabs">
+    <div class="DetailedPage_wrapper-content responsive">
+      <div class="name responsive">{{ vehicle.name }}</div>
+      <div class="tabs responsive">
         <nuxt-link to="specifications">Specifications</nuxt-link>
         <nuxt-link to="team">Team</nuxt-link>
         <nuxt-link to="rent-terms">Rent terms</nuxt-link>
       </div>
       <slot></slot>
-      <div class="rent">
-        <span class="rent-text">
+      <div class="rent responsive">
+        <span class="rent-text responsive">
           Rent for
           <span class="rent-text-pink">{{ vehicle.rent }} $/h</span></span
         >
 
         <button class="Rent__button" @click="rent">
-          <span class="Rent__button-text">
+          <span class="Rent__button-text responsive">
             <span>Rent now</span>
           </span>
         </button>
@@ -56,7 +56,6 @@ export default {
 .DetailedPage_wrapper {
   display: flex;
   height: 100%;
-  padding: 0 64px;
 }
 
 .DetailedPage_wrapper__Image,

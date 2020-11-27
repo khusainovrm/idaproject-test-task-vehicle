@@ -4,8 +4,10 @@
       Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
     </div>
     <div class="Team_specialists">
-      <div class="Team_specialists__title">Qualified specialists</div>
-      <div class="Team_specialists__specialists">
+      <div class="Team_specialists__title responsive">
+        Qualified specialists
+      </div>
+      <div class="Team_specialists__specialists responsive">
         <SpecialistCard
           src="/images/Marvin.png"
           name="Marvin McKinney"
@@ -42,7 +44,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .Team__text {
   font-weight: 300;
   font-size: 14px;
