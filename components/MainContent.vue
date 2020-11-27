@@ -22,11 +22,11 @@ export default {
 
 <style scoped>
 .Content {
-  margin: 0 64px 48px;
   background: var(--base-50);
   border-radius: 48px;
   flex-grow: 1;
   padding: 56px 64px;
+  height: 100%;
 
   display: flex;
   justify-content: center;

@@ -1,55 +1,55 @@
 <template>
-  <div>
-    <Nuxt />
+  <div class="container">
+    <div class="App">
+      <AppHeader />
+      <div class="App_wrapper">
+        <div v-if="!isRouteIncludesVehicle" class="App_wrapper-main">
+          <Nuxt />
+        </div>
+        <LayoutDetailed v-else><Nuxt /></LayoutDetailed>
+      </div>
+    </div>
   </div>
 </template>
 
+<script>
+export default {
+  name: 'Default',
+
+  computed: {
+    isRouteIncludesVehicle() {
+      return this.$route.fullPath.includes('vehicles')
+    },
+  },
+  created() {
+    if (!this.$store.getters['vehicles/getVehicles'])
+      this.$store.dispatch('vehicles/fetch_vehicles')
+  },
+}
+</script>
+
 <style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+.container {
+  min-height: 100vh;
+  width: 100%;
+  background: var(--base-0);
+  display: flex;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
+.App {
+  margin: 0 auto;
+  max-width: 1920px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+.App_wrapper {
+  margin: 0 64px 48px;
+  flex-grow: 1;
 }
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+.App_wrapper-main {
+  height: 100%;
 }
 </style>

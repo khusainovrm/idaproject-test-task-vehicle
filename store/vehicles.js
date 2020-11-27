@@ -1,7 +1,7 @@
 import { getVehicles } from '@/api/request'
 
 export const state = () => ({
-  vehicles: false,
+  vehicles: null,
   error: false,
   loading: true,
 })
@@ -32,4 +32,6 @@ export const getters = {
   getVehicles: (state) => state.vehicles,
   getError: (state) => state.error,
   getLoading: (state) => state.loading,
+  getVehicleByName: (_, getters) => (name) =>
+    getters.getVehicles.filter((v) => v.name === name)[0],
 }

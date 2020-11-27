@@ -1,5 +1,8 @@
 <template>
-  <div class="Card">
+  <div
+    class="Card"
+    @click="$router.push(`vehicles/${vehicle.name}/specifications`)"
+  >
     <div class="Card__Image">
       <img :src="vehicle.preview" alt="" />
     </div>
@@ -30,6 +33,7 @@ export default {
   height: 164px;
   padding: 24px;
   display: flex;
+  cursor: pointer;
 }
 
 .Card__Image img {
