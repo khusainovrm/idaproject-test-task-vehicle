@@ -12,6 +12,8 @@
         <nuxt-link to="rent-terms">Rent terms</nuxt-link>
       </div>
       <slot></slot>
+
+      <div class="rentUpperFadeWrapper"></div>
       <div class="rent responsive">
         <span class="rent-text responsive">
           Rent for
@@ -41,9 +43,7 @@ export default {
       return this.$store.getters['vehicles/getVehicles']
     },
   },
-  mounted() {
-    console.log(this.vehicle)
-  },
+  mounted() {},
   methods: {
     rent() {
       console.log('rent')
@@ -106,6 +106,7 @@ export default {
   align-items: center;
   justify-content: space-between;
   padding: 0 32px;
+  z-index: 10;
 }
 
 .rent .rent-text {

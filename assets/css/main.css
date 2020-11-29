@@ -136,7 +136,7 @@ button:focus {
   .Select.responsive {
     margin-bottom: 25px;
   }
-  px .Card.responsive {
+  .Card.responsive {
     border-radius: 24px;
   }
 
@@ -161,6 +161,10 @@ button:focus {
     padding: 0 16px;
   }
 
+  .DetailedPage_wrapper-content.responsive {
+    margin-bottom: 87px;
+  }
+
   .DetailedPage_wrapper-content .name.responsive {
     font-size: 24px;
     line-height: 29px;
@@ -177,8 +181,34 @@ button:focus {
   }
 
   .rent.responsive {
-    margin-top: 20px;
     padding: 0 24px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 16px;
+  }
+
+  .rentUpperFadeWrapper {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: 80px;
+    width: 100%;
+    height: 34px;
+    background: linear-gradient(180deg, rgba(252, 252, 252, 0) 0%, #fcfcfc 100%);
+    z-index: 9;
+  }
+  .rentUpperFadeWrapper::after{
+    content:'';
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: white;
   }
 
   .rent .rent-text.responsive {
