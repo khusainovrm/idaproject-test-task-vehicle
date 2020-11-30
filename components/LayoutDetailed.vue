@@ -1,5 +1,5 @@
 <template>
-  <div class="DetailedPage_wrapper responsive">
+  <div v-cloak class="DetailedPage_wrapper responsive">
     <div class="DetailedPage_wrapper__Image responsive">
       <img :src="vehicle.image" alt="" class="responsive" />
     </div>
@@ -38,9 +38,6 @@ export default {
       return this.$store.getters['vehicles/getVehicleByName'](
         this.$route.params.name
       )
-    },
-    vehicles() {
-      return this.$store.getters['vehicles/getVehicles']
     },
   },
   mounted() {},

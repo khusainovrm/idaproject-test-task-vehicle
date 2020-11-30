@@ -6,7 +6,8 @@
         <div v-if="!isRouteIncludesVehicle" class="App_wrapper-main">
           <Nuxt />
         </div>
-        <div v-if="loading" class="Loading">Loading...</div>
+
+        <div v-else-if="loading" class="Loading">Loading...</div>
         <LayoutDetailed v-else><Nuxt /></LayoutDetailed>
       </div>
     </div>
@@ -25,16 +26,35 @@ export default {
     isRouteIncludesVehicle() {
       return this.$route.fullPath.includes('vehicles')
     },
+
+    vehicles() {
+      return this.$store.getters['vehicles/getVehicles']
+    },
+  },
+
+  // implementation of functionality to open project on any page without error
+  watch: {
+    $route(to) {
+      if (!this.vehicles.length) {
+        to.fullPath.includes('vehicles')
+          ? this.fetchVehicles()
+          : this.fetchVehicles('main')
+      } else this.loading = false
+    },
   },
 
   created() {
-    this.fetchVehicles()
+    !this.$route.fullPath.includes('vehicles')
+      ? this.fetchVehicles('mainPage')
+      : this.fetchVehicles()
   },
 
   methods: {
-    async fetchVehicles() {
+    async fetchVehicles(flag) {
       if (!this.$store.getters['vehicles/getVehicles']) {
         await this.$store.dispatch('vehicles/fetch_vehicles').then((data) => {
+          this.loading = true
+          if (flag) return
           if (data) {
             this.loading = false
           } else this.fetchVehicles()
