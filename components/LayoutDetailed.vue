@@ -46,6 +46,7 @@ export default {
   mounted() {},
   methods: {
     rent() {
+      // eslint-disable-next-line no-console
       console.log('rent')
     },
   },

@@ -6,6 +6,7 @@
         <div v-if="!isRouteIncludesVehicle" class="App_wrapper-main">
           <Nuxt />
         </div>
+        <div v-if="loading" class="Loading">Loading...</div>
         <LayoutDetailed v-else><Nuxt /></LayoutDetailed>
       </div>
     </div>
@@ -16,14 +17,30 @@
 export default {
   name: 'Default',
 
+  data: () => ({
+    loading: true,
+  }),
+
   computed: {
     isRouteIncludesVehicle() {
       return this.$route.fullPath.includes('vehicles')
     },
   },
+
   created() {
-    if (!this.$store.getters['vehicles/getVehicles'])
-      this.$store.dispatch('vehicles/fetch_vehicles')
+    this.fetchVehicles()
+  },
+
+  methods: {
+    async fetchVehicles() {
+      if (!this.$store.getters['vehicles/getVehicles']) {
+        await this.$store.dispatch('vehicles/fetch_vehicles').then((data) => {
+          if (data) {
+            this.loading = false
+          } else this.fetchVehicles()
+        })
+      }
+    },
   },
 }
 </script>
@@ -51,5 +68,9 @@ export default {
 
 .App_wrapper-main {
   height: 100%;
+}
+
+.Loading {
+  padding: 0 16px;
 }
 </style>
