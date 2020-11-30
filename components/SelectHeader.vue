@@ -2,12 +2,12 @@
   <div class="Select responsive">
     <div class="Select__select responsive">
       <span class="Select__select-text">Rent</span>
-      <span class="Select__select-select">whatever</span>
-      <select v-model="selectedGroup" class="selectGroup">
-        <option disabled value="">Выберите один из вариантов</option>
-        <option>Tom</option>
-        <option>Bob</option>
-        <option>Sam</option>
+      <span class="Select__select-select">{{ chosenFilter }}</span>
+      <select v-model="selectedFilter" class="selectGroup">
+        <option value="">whatever</option>
+        <option v-for="category in selectedCategories" :key="category">
+          {{ category }}
+        </option>
       </select>
     </div>
     <div class="Select_create">
@@ -20,11 +20,24 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: 'SelectHeader',
   data: () => ({
-    selectedGroup: '',
+    selectedFilter: '',
   }),
+
+  computed: {
+    ...mapGetters('vehicles', {
+      selectedCategories: 'getCategories',
+      chosenFilter: 'getFilter',
+    }),
+  },
+  watch: {
+    selectedFilter() {
+      this.$store.commit('vehicles/SET_FILTER', this.selectedFilter)
+    },
+  },
 }
 </script>
 

@@ -4,6 +4,7 @@ export const state = () => ({
   vehicles: null,
   error: false,
   loading: true,
+  filter: 'whatever',
 })
 
 export const mutations = {
@@ -11,6 +12,7 @@ export const mutations = {
   SET_ERROR: (state) => (state.error = false),
   REMOVE_ERROR: (state) => (state.error = true),
   REMOVE_LOADING: (state) => (state.loading = false),
+  SET_FILTER: (state, filter) => (state.filter = filter),
 }
 
 export const actions = {
@@ -34,4 +36,21 @@ export const getters = {
   getLoading: (state) => state.loading,
   getVehicleByName: (_, getters) => (name) =>
     getters.getVehicles.filter((v) => v.name === name)[0],
+  getCategories: (state) => {
+    const categorySet = new Set()
+    state.vehicles.map((v) => categorySet.add(v.type))
+    return categorySet
+  },
+  getFilter: (state) => {
+    if (!state.filter) return 'whatever'
+    return state.filter
+  },
+  getVehiclesByFilter: (_, getters) => {
+    const filtred = getters.getVehicles.filter(
+      (v) => v.type === getters.getFilter
+    )
+    if (filtred.length) {
+      return filtred
+    } else return getters.getVehicles
+  },
 }

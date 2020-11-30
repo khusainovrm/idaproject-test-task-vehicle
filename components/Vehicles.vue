@@ -10,7 +10,7 @@
 export default {
   computed: {
     vehicles() {
-      return this.$store.getters['vehicles/getVehicles']
+      return this.$store.getters['vehicles/getVehiclesByFilter']
     },
   },
 }
