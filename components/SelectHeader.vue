@@ -3,6 +3,12 @@
     <div class="Select__select responsive">
       <span class="Select__select-text">Rent</span>
       <span class="Select__select-select">whatever</span>
+      <select v-model="selectedGroup" class="selectGroup">
+        <option disabled value="">Выберите один из вариантов</option>
+        <option>Tom</option>
+        <option>Bob</option>
+        <option>Sam</option>
+      </select>
     </div>
     <div class="Select_create">
       <span class="Select_create--text center responsive">Add new</span>
@@ -16,6 +22,9 @@
 <script>
 export default {
   name: 'SelectHeader',
+  data: () => ({
+    selectedGroup: '',
+  }),
 }
 </script>
 
@@ -60,6 +69,23 @@ export default {
   background: var(--main-400);
   border-radius: 30%;
   transition: background 0.1s ease-out;
+}
+.selectGroup {
+  border: none;
+  background: url('/assets/svgs/Logo.svg');
+  vertical-align: middle;
+  width: 20px;
+  color: var(--main-400);
+}
+
+.selectGroup:focus {
+  outline: none;
+}
+
+.selectGroup::before {
+  content: '11';
+  width: 100px;
+  height: 100px;
 }
 
 .Button:hover {

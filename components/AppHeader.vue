@@ -7,8 +7,18 @@
 
     <p class="Logo__motto mobile-hidden">World's first affordable airsharing</p>
     <div class="buttons-wrapper">
-      <div class="theme-toggle" @click="changeTheme()">
-        <img class="theme-toggle__icon responsive" :src="IconTheme" alt="#" />
+      <div
+        class="theme-toggle"
+        @click="changeTheme()"
+        @mouseover="animateIcon = true"
+        @mouseleave="animateIcon = false"
+      >
+        <img
+          :class="{ SpecialAnimation: animateIcon }"
+          class="theme-toggle__icon responsive"
+          :src="IconTheme"
+          alt="#"
+        />
         <div class="theme-toggle__text mobile-hidden">
           <span v-if="!isDarkTheme">Night mod</span>
           <span v-else>Day mod</span>
@@ -47,6 +57,7 @@ import Moon from '@/assets/svgs/moon-icon.svg'
 import Sun from '@/assets/svgs/sun.svg'
 
 export default {
+  data: () => ({ animateIcon: false }),
   computed: {
     isDarkTheme() {
       return this.$store.getters['theme/isDarkTheme']
@@ -103,6 +114,7 @@ header {
 
 .Logo__motto {
   color: var(--base-300);
+  user-select: none;
 }
 
 .theme-toggle {
@@ -113,6 +125,23 @@ header {
 
 .theme-toggle .theme-toggle__icon {
   margin-right: 18px;
+}
+
+.SpecialAnimation {
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+  }
 }
 
 .theme-toggle__text {
@@ -130,6 +159,7 @@ header {
 }
 
 .profile .profile__text {
+  user-select: none;
   margin-right: 16px;
   font-weight: bold;
   color: var(--base-500);

@@ -3,12 +3,14 @@
     <div class="App">
       <AppHeader />
       <div class="App_wrapper responsive">
-        <div v-if="!isRouteIncludesVehicle" class="App_wrapper-main">
-          <Nuxt />
-        </div>
+        <transition name="fade">
+          <div v-if="!isRouteIncludesVehicle" class="App_wrapper-main">
+            <Nuxt key="1" />
+          </div>
 
-        <div v-else-if="loading" class="Loading">Loading...</div>
-        <LayoutDetailed v-else><Nuxt /></LayoutDetailed>
+          <div v-else-if="loading" class="Loading">Loading...</div>
+          <LayoutDetailed v-else key="2"><Nuxt /></LayoutDetailed>
+        </transition>
       </div>
     </div>
   </div>
@@ -100,5 +102,15 @@ export default {
 
 .Loading {
   padding: 0 16px;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

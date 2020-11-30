@@ -34,6 +34,11 @@ export default {
   padding: 24px;
   display: flex;
   cursor: pointer;
+  transition: box-shadow 0.2s ease-in;
+}
+
+.Card:hover {
+  box-shadow: 0 0 3px 0 var(--base-300);
 }
 
 .Card__Image img {

@@ -141,6 +141,13 @@ export default {
   transition: background 0.2s ease-in;
 }
 
+.rent .Rent__button:active {
+  cursor: pointer;
+  background: var(--main-400);
+  filter: opacity(0.9);
+  transition: filter 0.1s ease-in;
+}
+
 .Rent__button .Rent__button-text {
   padding: 17px 32px;
   font-weight: bold;

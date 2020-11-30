@@ -66,6 +66,13 @@ export default {
   transition: background 0.2s ease-in;
 }
 
+.Error .Error__button:active {
+  cursor: pointer;
+  background: var(--main-400);
+  filter: opacity(0.9);
+  transition: filter 0.1s ease-in;
+}
+
 .Error__button .Error__button-text {
   margin: 0 auto;
   font-weight: bold;
