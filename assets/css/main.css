@@ -21,6 +21,10 @@ html {
   margin: 0;
 }
 
+.container {
+  transition: all 2s linear;
+}
+
 /*button reset*/
 button {
   background: none;
@@ -109,8 +113,8 @@ button:focus {
     height: 32px;
   }
 
-  .Logo .Logo__text.resposive {
-    width: 70px;
+  .Logo .Logo__text.responsive {
+    margin-left: 10px;
   }
 
   .Content.responsive {
@@ -208,7 +212,29 @@ button:focus {
     bottom: 0;
     right: 0;
     left: 0;
-    background: white;
+    background: var(--base-0);
+  }
+
+  .rentUpperFadeWrapperDark {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: 80px;
+    width: 100%;
+    height: 34px;
+    background: linear-gradient(180deg, rgba(1, 35, 69, 0) 0%, #012345 100%);
+    z-index: 9;
+  }
+  .rentUpperFadeWrapperDark::after{
+    content:'';
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: var(--base-0);
   }
 
   .rent .rent-text.responsive {

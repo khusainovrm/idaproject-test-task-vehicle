@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" :class="{ 'dark-mode': isDarkTheme }">
     <div class="App">
       <AppHeader />
       <div class="App_wrapper responsive">
@@ -30,6 +30,10 @@ export default {
     vehicles() {
       return this.$store.getters['vehicles/getVehicles']
     },
+
+    isDarkTheme() {
+      return this.$store.getters['theme/isDarkTheme']
+    },
   },
 
   // implementation of functionality to open project on any page without error
@@ -44,6 +48,9 @@ export default {
   },
 
   created() {
+    if (localStorage.getItem('themeVehicle') === 'dark')
+      this.$store.commit('theme/TOGGLE_THEME', 'firstInit')
+
     !this.$route.fullPath.includes('vehicles')
       ? this.fetchVehicles('mainPage')
       : this.fetchVehicles()
@@ -71,6 +78,7 @@ export default {
   width: 100%;
   background: var(--base-0);
   display: flex;
+  transition: background-color 0.2s ease-in;
 }
 
 .App {

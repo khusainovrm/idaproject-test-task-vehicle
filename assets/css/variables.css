@@ -10,3 +10,14 @@
   --secondary-400:  #F84AB3;
   --secondary-500:  #F61D9F;
 }
+
+
+.dark-mode {
+  --base-0: #012345;
+  --base-50:  #011C37;
+  --base-200: #677B8F;
+  --base-300: #99A7B5;
+  --base-500:  #FCFCFC;
+  --base-600:  #F3F4F7;
+
+}

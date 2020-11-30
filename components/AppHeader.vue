@@ -1,23 +1,18 @@
 <template>
   <header class="AppHeader responsive">
     <div class="Logo responsive" @click="$router.push('/')">
-      <img class="Logo__icon responsive" src="~/assets/svgs/Logo.svg" alt="#" />
-      <img
-        class="Logo__text resposive"
-        src="~/assets/svgs/Pepelane.svg"
-        alt="#"
-      />
+      <img class="Logo__icon responsive" :src="Logotype" alt="#" />
+      <div class="Logo__text responsive">Pepelane</div>
     </div>
 
     <p class="Logo__motto mobile-hidden">World's first affordable airsharing</p>
     <div class="buttons-wrapper">
-      <div class="theme-toggle">
-        <img
-          class="theme-toggle__icon responsive"
-          src="~/assets/svgs/moon-icon.svg"
-          alt="#"
-        />
-        <div class="theme-toggle__text mobile-hidden">Night mood</div>
+      <div class="theme-toggle" @click="changeTheme()">
+        <img class="theme-toggle__icon responsive" :src="IconTheme" alt="#" />
+        <div class="theme-toggle__text mobile-hidden">
+          <span v-if="!isDarkTheme">Night mod</span>
+          <span v-else>Day mod</span>
+        </div>
       </div>
 
       <div class="notification-icons responsive">
@@ -46,7 +41,36 @@
 </template>
 
 <script>
-export default {}
+import Logo from '@/assets/svgs/Logo.svg'
+import DarkLogo from '@/assets/svgs/LogoDark.svg'
+import Moon from '@/assets/svgs/moon-icon.svg'
+import Sun from '@/assets/svgs/sun.svg'
+
+export default {
+  computed: {
+    isDarkTheme() {
+      return this.$store.getters['theme/isDarkTheme']
+    },
+
+    Logotype() {
+      if (this.isDarkTheme) {
+        return DarkLogo
+      } else return Logo
+    },
+
+    IconTheme() {
+      if (this.isDarkTheme) {
+        return Sun
+      } else return Moon
+    },
+  },
+
+  methods: {
+    changeTheme() {
+      this.$store.commit('theme/TOGGLE_THEME')
+    },
+  },
+}
 </script>
 
 <style>
@@ -72,8 +96,9 @@ header {
 }
 
 .Logo .Logo__text {
-  width: 104px;
-  height: 21px;
+  font-size: 23px;
+  font-weight: bold;
+  color: var(--base-500);
 }
 
 .Logo__motto {
@@ -83,6 +108,7 @@ header {
 .theme-toggle {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .theme-toggle .theme-toggle__icon {
@@ -91,6 +117,7 @@ header {
 
 .theme-toggle__text {
   margin-right: 107px;
+  color: var(--base-300);
 }
 
 .notification-icons .notification-icon-chat {
@@ -105,6 +132,7 @@ header {
 .profile .profile__text {
   margin-right: 16px;
   font-weight: bold;
+  color: var(--base-500);
 }
 
 .profile .profile__image {

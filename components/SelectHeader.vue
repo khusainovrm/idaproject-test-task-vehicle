@@ -36,6 +36,10 @@ export default {
   color: var(--main-400);
 }
 
+.Select__select-text {
+  color: var(--base-500);
+}
+
 .Select .Select_create {
   display: inline-flex;
 }

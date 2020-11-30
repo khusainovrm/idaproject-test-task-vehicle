@@ -50,6 +50,7 @@ export default {
 
 .Card_description .title {
   font-weight: bold;
+  color: var(--base-500);
 }
 
 .Card_description .description {

@@ -13,7 +13,7 @@
       </div>
       <slot></slot>
 
-      <div class="rentUpperFadeWrapper"></div>
+      <div :class="computedClass"></div>
       <div class="rent responsive">
         <span class="rent-text responsive">
           Rent for
@@ -38,6 +38,14 @@ export default {
       return this.$store.getters['vehicles/getVehicleByName'](
         this.$route.params.name
       )
+    },
+    isDarkTheme() {
+      return this.$store.getters['theme/isDarkTheme']
+    },
+    computedClass() {
+      if (!this.isDarkTheme) {
+        return 'rentUpperFadeWrapper'
+      } else return 'rentUpperFadeWrapperDark'
     },
   },
   mounted() {},
@@ -137,7 +145,7 @@ export default {
   padding: 17px 32px;
   font-weight: bold;
   font-size: 16px;
-  color: var(--base-0);
+  color: #fcfcfc;
 }
 
 .tabs .nuxt-link-exact-active {

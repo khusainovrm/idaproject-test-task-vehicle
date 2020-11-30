@@ -37,6 +37,7 @@ export default {
   font-size: 40px;
   line-height: 48px;
   margin-top: 24px;
+  color: var(--base-500);
 }
 
 .Error .Error__text {
@@ -69,7 +70,7 @@ export default {
   margin: 0 auto;
   font-weight: bold;
   font-size: 16px;
-  color: var(--base-0);
+  color: #fcfcfc;
 }
 
 .Error button[disabled],
