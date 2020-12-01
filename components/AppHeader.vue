@@ -198,22 +198,21 @@ header {
 
 .notification-icon-chat:hover {
   animation: shakeIconChat 2s;
-  animation-delay: 0.3s;
 }
 @keyframes shakeIconChat {
   0%,
   25%,
   83%,
   100% {
-    transform: translateX(0px);
+    transform: translateY(0px);
   }
   32.5%,
   62.5% {
-    transform: translateX(-3px);
+    transform: translateY(-3px);
   }
   47.5%,
   75.5% {
-    transform: translateX(3px);
+    transform: translateY(3px);
   }
 }
 
