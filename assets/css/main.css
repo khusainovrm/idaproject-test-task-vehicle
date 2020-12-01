@@ -331,4 +331,8 @@ button:focus {
   .overlay.responsive{
     background: rgba(0, 7, 14, 0.32);
   }
+
+  .notification-icons .notification-icon-chat.responsive{
+    margin-right: 18px;
+  }
 }

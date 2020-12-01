@@ -104,6 +104,10 @@ export default {
   margin: 0 32px;
 }
 
+a:not(nuxt-link-exact-active):hover {
+  color: var(--base-500);
+}
+
 .DetailedPage_wrapper-content .rent {
   background: var(--base-50);
   border-radius: 16px;
