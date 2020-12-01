@@ -34,7 +34,7 @@ export default {
   padding: 24px;
   display: flex;
   cursor: pointer;
-  transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.1s ease-in;
 }
 
 .Card:hover {

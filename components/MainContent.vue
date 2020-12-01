@@ -1,8 +1,15 @@
 <template>
   <div class="Content responsive">
+    <AddNewVehicleForm
+      :show-form="showAddNewVehicleForm"
+      @closeForm="toggleForm"
+    />
     <Loader v-if="loading" />
     <Error v-else-if="!error" />
-    <div v-else class="Content__container"><SelectHeader /> <Vehicles /></div>
+    <div v-else class="Content__container">
+      <SelectHeader @openForm="toggleForm" />
+      <Vehicles />
+    </div>
   </div>
 </template>
 
@@ -10,7 +17,17 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  name: 'Content',
+  name: 'MainContent',
+
+  data: () => ({
+    showAddNewVehicleForm: false,
+  }),
+
+  methods: {
+    toggleForm() {
+      this.showAddNewVehicleForm = !this.showAddNewVehicleForm
+    },
+  },
   computed: {
     ...mapGetters('vehicles', {
       error: 'getError',

@@ -44,13 +44,14 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .Specification__description {
   font-weight: 300;
   font-size: 14px;
   line-height: 20px;
   color: var(--base-300);
   margin-bottom: 32px;
+  user-select: none;
 }
 
 .Specification__features .title {
@@ -88,5 +89,9 @@ export default {
   font-size: 14px;
   line-height: 20px;
   color: var(--base-300);
+}
+
+.icon img {
+  width: 25px;
 }
 </style>

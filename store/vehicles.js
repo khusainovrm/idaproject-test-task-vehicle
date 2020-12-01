@@ -13,6 +13,7 @@ export const mutations = {
   REMOVE_ERROR: (state) => (state.error = true),
   REMOVE_LOADING: (state) => (state.loading = false),
   SET_FILTER: (state, filter) => (state.filter = filter),
+  ADD_VEHICLE: (state, vehicle) => state.vehicles.push(vehicle),
 }
 
 export const actions = {

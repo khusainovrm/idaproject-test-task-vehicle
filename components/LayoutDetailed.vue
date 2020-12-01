@@ -11,7 +11,10 @@
         <nuxt-link to="team">Team</nuxt-link>
         <nuxt-link to="rent-terms">Rent terms</nuxt-link>
       </div>
-      <slot></slot>
+
+      <transition name="slide">
+        <slot></slot>
+      </transition>
 
       <div :class="computedClass"></div>
       <div class="rent responsive">
@@ -161,5 +164,14 @@ export default {
   line-height: 14px;
   color: var(--main-400);
   text-decoration: none;
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: opacity 0.3s ease-in;
+}
+.slide-enter,
+.slide-leave-active {
+  opacity: 0;
 }
 </style>

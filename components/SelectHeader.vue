@@ -12,7 +12,7 @@
     </div>
     <div class="Select_create">
       <span class="Select_create--text center responsive">Add new</span>
-      <button class="Button responsive">
+      <button class="Button responsive" @click="$emit('openForm')">
         <span class="Button__text">+</span>
       </button>
     </div>
@@ -52,6 +52,7 @@ export default {
   font-weight: bold;
   font-size: 40px;
   line-height: 48px;
+  user-select: none;
 }
 
 .Select__select-select {
@@ -71,6 +72,7 @@ export default {
   font-size: 20px;
   line-height: 28px;
   color: var(--main-400);
+  user-select: none;
 }
 
 .Select .Button {

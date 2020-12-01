@@ -53,6 +53,7 @@ export default {
   font-size: 14px;
   line-height: 20px;
   color: var(--base-300);
+  user-select: none;
 }
 
 .Rent-terms__term-conditions__title {
