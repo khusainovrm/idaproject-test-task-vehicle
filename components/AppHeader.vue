@@ -173,6 +173,48 @@ header {
 .notification-icons {
   display: flex;
   margin-right: 59px;
+  cursor: pointer;
+}
+
+.notification-icon:hover {
+  animation: shake 2s infinite;
+}
+@keyframes shake {
+  0%,
+  25%,
+  83%,
+  100% {
+    transform: rotatez(0deg);
+  }
+  32.5%,
+  62.5% {
+    transform: rotatez(-5deg);
+  }
+  47.5%,
+  75.5% {
+    transform: rotatez(5deg);
+  }
+}
+
+.notification-icon-chat:hover {
+  animation: shakeIconChat 2s;
+  animation-delay: 0.3s;
+}
+@keyframes shakeIconChat {
+  0%,
+  25%,
+  83%,
+  100% {
+    transform: translateX(0px);
+  }
+  32.5%,
+  62.5% {
+    transform: translateX(-3px);
+  }
+  47.5%,
+  75.5% {
+    transform: translateX(3px);
+  }
 }
 
 .AppHeader .buttons-wrapper {
