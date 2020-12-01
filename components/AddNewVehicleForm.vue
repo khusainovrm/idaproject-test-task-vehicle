@@ -177,7 +177,7 @@ export default {
   display: flex;
   flex-direction: column;
   transform: translate(600px);
-  transition: all 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out;
   z-index: 10;
 }
 
@@ -354,7 +354,7 @@ input[type='file'] {
 .input__description-label,
 .input__rentPrice-label {
   position: absolute;
-  top: -17px;
+  top: -14px;
   left: 0;
   color: var(--secondary-400);
   opacity: 0;
