@@ -2,13 +2,17 @@
   <div class="Select responsive">
     <div class="Select__select responsive">
       <span class="Select__select-text">Rent</span>
-      <span class="Select__select-select">{{ chosenFilter }}</span>
-      <select v-model="selectedFilter" class="selectGroup">
+      <select
+        id="selectCategory"
+        v-model="selectedFilter"
+        class="selectGroup responsive"
+      >
         <option value="">whatever</option>
         <option v-for="category in selectedCategories" :key="category">
           {{ category }}
         </option>
       </select>
+      <label for="selectCategory" class="label__selectCategory"></label>
     </div>
     <div class="Select_create">
       <span class="Select_create--text center responsive">Add new</span>
@@ -30,7 +34,6 @@ export default {
   computed: {
     ...mapGetters('vehicles', {
       selectedCategories: 'getCategories',
-      chosenFilter: 'getFilter',
     }),
   },
   watch: {
@@ -87,20 +90,22 @@ export default {
 }
 .selectGroup {
   border: none;
-  background: url('/assets/svgs/Logo.svg');
   vertical-align: middle;
-  width: 20px;
   color: var(--main-400);
+  cursor: pointer;
+  appearance: none;
+  background: url(../assets/svgs/selectArrow.svg) no-repeat right;
+  font-family: 'Codec Pro News', serif;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 48px;
+}
+.label__selectCategory {
+  background: url(../assets/svgs/selectArrow.svg) no-repeat right;
 }
 
 .selectGroup:focus {
   outline: none;
-}
-
-.selectGroup::before {
-  content: '11';
-  width: 100px;
-  height: 100px;
 }
 
 .Button:hover {

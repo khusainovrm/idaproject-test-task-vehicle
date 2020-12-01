@@ -272,6 +272,8 @@ input.description {
 }
 .input-wrapper-text {
   flex-grow: 1;
+  font-weight: 300;
+  line-height: 14px;
   color: var(--base-300);
 }
 
